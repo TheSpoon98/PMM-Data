@@ -1,0 +1,150 @@
+#############################################################
+#                  Special Release Overlay                  #
+#         Created by Yozora, Bullmoose20, & Sohjiro         #
+#            Credit to Magic815 for base images             #
+#############################################################
+#  Designed for TRaSH Guides filename naming scheme         #
+#  https://trash-guides.info/                               #
+#                                                           #
+#  Call this from your config.yml (Movie or Show):          #
+#  If nothing is specified these are the defaults           #
+#                                                           #
+#    overlay_path:                                          #
+#      - git: PMM/overlays/special_release                  #
+#        template_variables:                                #
+#          # Set episode or season to overlay               #
+#          overlay_level:                                   #
+#          # Set the horizontal offset for the overlay      #
+#          horizontal_offset: 15                            #
+#          # Set the horizontal align for the overlay       #
+#          horizontal_align: left                           #
+#          # Set the vertical offset for the overlay        #
+#          vertical_offset: 113                             #
+#          # Set the vertical align for the overlay         #
+#          vertical_align: bottom                           #
+#############################################################
+templates:
+  Edition:
+    optional:
+      - overlay_level
+      - use_<<slug>>
+    default:
+      overlay: <<overlay_name>>
+      extra: '-Box'
+      horizontal_offset: 15
+      horizontal_align: left
+      vertical_offset: 15
+      vertical_align: top
+      group: SpecialReleaseGroup
+    collection_level: <<overlay_level>>
+    allowed_library_types: <<use_<<slug>>>>
+    suppress_overlays:
+      - IMAX-E
+      - IMAX
+    overlay:
+      name: <<overlay>><<extra>>
+      group: <<group>>
+      weight: <<weight>>
+      horizontal_offset: <<horizontal_offset>>
+      horizontal_align: <<horizontal_align>>
+      vertical_offset: <<vertical_offset>>
+      vertical_align: <<vertical_align>>
+
+overlays:
+  Directors-Cut:
+    template:
+      - name: Edition
+        weight: 90
+        slug: directorscut
+        overlay: Directors-Cut
+    plex_all: true
+    filters:
+      filepath.regex: '(?<=[0-9]{4}[)}>\]]\s)(?i)\bDirector|Directors\b'
+
+  Extended-Edition:
+    template:
+      - name: Edition
+        weight: 80
+        slug: extended
+        overlay: Extended-Edition
+    plex_all: true
+    filters:
+      filepath.regex: '(?<=[0-9]{4}[)}>\]]\s)(?i)\bExtended\b'
+
+  Uncut-Edition:
+    template:
+      - name: Edition
+        weight: 70
+        slug: uncut
+        overlay: Uncut-Edition
+    plex_all: true
+    filters:
+      filepath.regex: '(?<=[0-9]{4}[)}>\]]\s)(?i)\bUncut\b'
+
+  Unrated-Edition:
+    template:
+      - name: Edition
+        weight: 60
+        slug: unrated
+        overlay: Unrated-Edition
+    plex_all: true
+    filters:
+      filepath.regex: '(?<=[0-9]{4}[)}>\]]\s)(?i)\bUnrated\b'
+
+  Special-Edition:
+    template:
+      - name: Edition
+        weight: 50
+        slug: special
+        overlay: Special-Edition
+    plex_all: true
+    filters:
+      filepath.regex: '(?<=[0-9]{4}[)}>\]]\s)(?i)\bSpecial\b'
+
+  Final-Cut:
+    template:
+      - name: Edition
+        weight: 40
+        slug: finalcut
+        overlay: Final-Cut
+    plex_all: true
+    filters:
+      filepath.regex: '(?<=[0-9]{4}[)}>\]]\s)(?i)\bFinal Cut\b'
+
+  Remastered:
+    template:
+      - name: Edition
+        weight: 30
+        slug: remastered
+        overlay: Remastered
+    plex_all: true
+    filters:
+      filepath.regex: '(?<=[0-9]{4}[)}>\]]\s)(?i)\bRemaster\b'
+
+  Criterion:
+    template:
+      - name: Edition
+        weight: 20
+        slug: criterion
+    suppress_overlays:
+      - Criterion-Dovetail
+    plex_all: true
+    filters:
+      filepath.regex:
+        - "(?i)Criterion"
+        - '(?i)\[CC\]'
+
+  Criterion-Dovetail:
+    template:
+      - name: Edition
+        weight: 20
+        slug: criterion
+        extra: ''
+        vertical_offset: 99
+        group: Dovetail
+        overlay: Criterion
+    plex_all: true
+    filters:
+      filepath.regex:
+        - "(?i)Criterion"
+        - '(?i)\[CC\]'

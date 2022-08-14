@@ -1,0 +1,135 @@
+templates:
+  ContentRating:
+    optional:
+      - overlay_level
+    default:
+      font: fonts/Inter-Bold.ttf
+      font_size: 63
+      rating_font: <<font>>
+      rating_font_size: <<font_size>>
+      weight: 100
+      side: left
+    conditionals:
+      # run_this:
+      #   default: true
+      #   conditions:
+      #     - image_level: Top
+      #       rating<<rating_num>>_image: [anidb, letterboxd, rt_popcorn, tmdb, trakt]
+      #       value: false
+      #     - rating<<rating_num>>: none
+      #       value: false
+      rating_style:
+        default: ""
+        conditions:
+          - rating: [CSM]
+            value: "+"
+          # - rating_image: [rt_popcorn, rt_tomato, tmdb]
+          #   value: "%"
+      # rating_image_url:
+      #   conditions:
+      #     - rating_image: csm
+      #       value: CSM
+          # - rating<<rating_num>>_image: imdb
+          #   value: IMDb
+          # - rating<<rating_num>>_image: letterboxd
+          #   value: Letterboxd
+          # - rating<<rating_num>>_image: metacritic
+          #   value: Metacritic
+          # - rating<<rating_num>>_image: rt_popcorn
+          #   value: RT-Aud-
+          # - rating<<rating_num>>_image: rt_tomato
+          #   value: RT-Crit-
+          # - rating<<rating_num>>_image: tmdb
+          #   value: TMDb
+          # - rating<<rating_num>>_image: trakt
+          #   value: Trakt
+      rating_horizontal_offset:
+        default: 30
+        conditions:
+          - side: [top, bottom]
+            value: 30
+          # - side: [top, bottom]
+          #   rating2: none
+          #   value: -165
+          # - side: [top, bottom]
+          #   rating3: none
+          #   value: -165
+          # - side: [top, bottom]
+            # value: -335
+      rating_horizontal_align:
+        default: left
+        conditions:
+          - side: right
+            value: right
+          - side: [top, bottom]
+            value: left
+      rating_vertical_offset:
+        default: 30
+        conditions:
+          - side: [left, right]
+            value: 0
+          # - side: [left, right]
+          #   rating2: none
+          #   value: -105
+          # - side: [left, right]
+          #   rating3: none
+          #   value: -105
+          # - side: [left, right]
+            # value: -205
+      rating_vertical_align:
+        default: center
+        conditions:
+          - side: top
+            value: top
+          - side: bottom
+            value: bottom
+      back_width:
+        default: 160
+        conditions:
+          - side: [top, bottom]
+            rating: [CSM]
+            value: 270
+          - side: [top, bottom]
+            rating: [MPAA]
+            value: 400
+          - side: [left, right]
+            rating: [MPAA]
+            value: 200
+      back_height:
+        default: 160
+        conditions:
+          - side: [top, bottom]
+            rating: [CSM, MPAA]
+            value: 80
+      addon_position:
+        default: top
+        conditions:
+          - side: [top, bottom]
+            value: left
+    overlay:
+      name: text(<<content_rating>><<rating_style>>)
+      horizontal_offset: <<rating_horizontal_offset>>
+      horizontal_align: <<rating_horizontal_align>>
+      vertical_offset: <<rating_vertical_offset>>
+      vertical_align: <<rating_vertical_align>>
+      group: rating_group
+      weight: <<weight>>
+      font: <<rating_font>>
+      font_size: <<rating_font_size>>
+      font_color: "#FFFFFF"
+      back_color: "#00000099"
+      back_radius: 30
+      back_width: <<back_width>>
+      back_height: <<back_height>>
+      back_align: center
+      back_padding: 15
+      file: config/overlays/<<rating>>.png
+      # git: PMM/overlays/images/raw/<<rating_image_url>><<image_extra>>
+      addon_position: <<addon_position>>
+      addon_offset: 15
+
+overlays:
+  ContentRating:
+    template:
+      - name: ContentRating
+    plex_all: true

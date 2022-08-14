@@ -1,0 +1,381 @@
+#############################################################
+#                     Ratings Overlay                       #
+#         Created by Yozora, Bullmoose20, & Sohjiro         #
+#            Credit to Magic815 for base images             #
+#############################################################
+#  Call this from your config.yml (Movie or Show):          #
+#  If nothing is specified these are the defaults           #
+#                                                           #
+#    overlay_path:                                          #
+#      - git: PMM/overlays/ratings                          #
+#        template_variables:                                #
+#                                                           #
+#          # Set rating type for rating1, rating2, and/or   #
+#                rating3                                    #
+#          # Rating Types: critic, audience, user           #
+#                                                           #
+#          rating1: critic                                  #
+#          rating2: audience                                #
+#          rating3: user                                    #
+#                                                           #
+#          # Set rating image for rating1, rating2, and/or  #
+#                rating3                                    #
+#          # Rating Images: anidb, imdb, letterboxd, tmdb,  #
+#                metacritic, rt_popcorn, rt_tomato, trakt   #
+#                                                           #
+#          rating1_image: rt_tomato                         #
+#          rating2_image: imdb                              #
+#          rating3_image: tmdb                              #
+#                                                           #
+#          # Sets the side to display the ratings           #
+#          # Sides: left, right, top, bottom                #
+#                                                           #
+#          side: left                                       #
+#                                                           #
+#          # Set as 'episode' to overlay episodes           #
+#                                                           #
+#          overlay_level:                                   #
+#                                                           #
+#  Movies:                                                  #
+#    operations:                                            #
+#      mass_critic_rating_update: mdb_tomatoes              #
+#      mass_audience_rating_update: imdb                    #
+#      mass_user_rating_update: tmdb                        #
+#  TV Shows:                                                #
+#    operations:                                            #
+#      mass_critic_rating_update: mdb_tomatoes              #
+#      mass_audience_rating_update: imdb                    #
+#      mass_user_rating_update: tmdb                        #
+#      mass_episode_critic_rating_update: imdb              #
+#      mass_episode_audience_rating_update: imdb            #
+#      mass_episode_user_rating_update: tmdb                #
+#                                                           #
+#############################################################
+
+templates:
+  Rating:
+    optional:
+      - overlay_level
+    default:
+      font: fonts/Inter-Bold.ttf
+      font_size: 63
+      rating1_font: <<font>>
+      rating2_font: <<font>>
+      rating3_font: <<font>>
+      rating1_font_size: <<font_size>>
+      rating2_font_size: <<font_size>>
+      rating3_font_size: <<font_size>>
+      weight: 100
+      side: left
+      rating<<rating_num>>: none
+    conditionals:
+      mdblist_top:
+        conditions:
+          - image_level: Top
+            rating<<rating_num>>_image: rt_tomato
+            value: https://mdblist.com/lists/plexmetamanager/certifiedfresh<<library_type>>s
+          - image_level: Top
+            rating<<rating_num>>_image: metacritic
+            value: https://mdblist.com/lists/plexmetamanager/metacriticmustsee<<library_type>>s
+      imdb_top:
+        conditions:
+          - image_level: Top
+            rating<<rating_num>>_image: imdb
+            value: top_<<library_type>>s
+      run_this:
+        default: true
+        conditions:
+          - image_level: Top
+            rating<<rating_num>>_image: [anidb, letterboxd, rt_popcorn, tmdb, trakt]
+            value: false
+          - rating<<rating_num>>: none
+            value: false
+      rating<<rating_num>>_style:
+        default: ""
+        conditions:
+          - rating<<rating_num>>_image: [rt_popcorn, rt_tomato, tmdb]
+            value: "%"
+          - rating<<rating_num>>_image: metacritic
+            value: "0"
+      image_extra:
+        default: ""
+        conditions:
+          - rating<<rating_num>>_image: [imdb, rt_tomato, metacritic]
+            image_level: Top
+            value: Top
+          - rating<<rating_num>>_image: [rt_popcorn, rt_tomato]
+            value: <<image_level>>
+      rating<<rating_num>>_image_url:
+        conditions:
+          - rating<<rating_num>>_image: anidb
+            value: Anidb
+          - rating<<rating_num>>_image: imdb
+            value: IMDb
+          - rating<<rating_num>>_image: letterboxd
+            value: Letterboxd
+          - rating<<rating_num>>_image: metacritic
+            value: Metacritic
+          - rating<<rating_num>>_image: rt_popcorn
+            value: RT-Aud-
+          - rating<<rating_num>>_image: rt_tomato
+            value: RT-Crit-
+          - rating<<rating_num>>_image: tmdb
+            value: TMDb
+          - rating<<rating_num>>_image: trakt
+            value: Trakt
+      rating1_horizontal_offset:
+        default: 30
+        conditions:
+          - side: [top, bottom]
+            rating2: none
+            rating3: none
+            value: 0
+          - side: [top, bottom]
+            rating2: none
+            value: -165
+          - side: [top, bottom]
+            rating3: none
+            value: -165
+          - side: [top, bottom]
+            value: -335
+      rating1_horizontal_align:
+        default: left
+        conditions:
+          - side: right
+            value: right
+          - side: [top, bottom]
+            value: center
+      rating1_vertical_offset:
+        default: 30
+        conditions:
+          - side: [left, right]
+            rating2: none
+            rating3: none
+            value: 0
+          - side: [left, right]
+            rating2: none
+            value: -105
+          - side: [left, right]
+            rating3: none
+            value: -105
+          - side: [left, right]
+            value: -205
+      rating1_vertical_align:
+        default: center
+        conditions:
+          - side: top
+            value: top
+          - side: bottom
+            value: bottom
+      rating2_horizontal_offset:
+        default: 30
+        conditions:
+          - side: [top, bottom]
+            rating1: none
+            rating3: none
+            value: 0
+          - side: [top, bottom]
+            rating1: none
+            value: -165
+          - side: [top, bottom]
+            rating3: none
+            value: 165
+          - side: [top, bottom]
+            value: 0
+      rating2_horizontal_align:
+        default: left
+        conditions:
+          - side: right
+            value: right
+          - side: [top, bottom]
+            value: center
+      rating2_vertical_offset:
+        default: 30
+        conditions:
+          - side: [left, right]
+            rating1: none
+            rating3: none
+            value: 0
+          - side: [left, right]
+            rating1: none
+            value: -105
+          - side: [left, right]
+            rating3: none
+            value: 105
+          - side: [left, right]
+            value: 0
+      rating2_vertical_align:
+        default: center
+        conditions:
+          - side: top
+            value: top
+          - side: bottom
+            value: bottom
+      rating3_horizontal_offset:
+        default: 30
+        conditions:
+          - side: [top, bottom]
+            rating1: none
+            rating3: none
+            value: 0
+          - side: [top, bottom]
+            rating1: none
+            value: 165
+          - side: [top, bottom]
+            rating2: none
+            value: 165
+          - side: [top, bottom]
+            value: 335
+      rating3_horizontal_align:
+        default: left
+        conditions:
+          - side: right
+            value: right
+          - side: [top, bottom]
+            value: center
+      rating3_vertical_offset:
+        default: 30
+        conditions:
+          - side: [left, right]
+            rating1: none
+            rating2: none
+            value: 0
+          - side: [left, right]
+            rating1: none
+            value: 105
+          - side: [left, right]
+            rating2: none
+            value: 105
+          - side: [left, right]
+            value: 205
+      rating3_vertical_align:
+        default: center
+        conditions:
+          - side: top
+            value: top
+          - side: bottom
+            value: bottom
+      back_width:
+        default: 160
+        conditions:
+          - side: [top, bottom]
+            value: 270
+      back_height:
+        default: 160
+        conditions:
+          - side: [top, bottom]
+            value: 80
+      addon_position:
+        default: top
+        conditions:
+          - side: [top, bottom]
+            value: left
+      gte:
+        default: 0.0
+        conditions:
+          - image_level: Fresh
+            value: 6.0
+      lte:
+        default: 6.0
+        conditions:
+          - image_level: Fresh
+            value: 10.0
+      gsuffix:
+        conditions:
+          - rating<<rating_num>>: [critic, audience, user]
+            image_level: [Fresh, Rotten]
+            value: gte
+      lsuffix:
+        conditions:
+          - rating<<rating_num>>: [critic, audience, user]
+            image_level: Fresh
+            value: lte
+          - rating<<rating_num>>: [critic, audience, user]
+            image_level: Rotten
+            value: lt
+    plex_search:
+      all:
+        <<rating<<rating_num>>>>_rating.<<gsuffix>>: <<gte>>
+        <<rating<<rating_num>>>>_rating.<<lsuffix>>: <<lte>>
+    mdblist_list: <<mdblist_top>>
+    imdb_chart: <<imdb_top>>
+    collection_level: <<overlay_level>>
+    allowed_library_types: <<run_this>>
+    overlay:
+      name: text(<<rating<<rating_num>>>>_rating<<rating<<rating_num>>_style>>)
+      horizontal_offset: <<rating<<rating_num>>_horizontal_offset>>
+      horizontal_align: <<rating<<rating_num>>_horizontal_align>>
+      vertical_offset: <<rating<<rating_num>>_vertical_offset>>
+      vertical_align: <<rating<<rating_num>>_vertical_align>>
+      group: rating<<rating_num>>_group
+      weight: <<weight>>
+      font: <<rating<<rating_num>>_font>>
+      font_size: <<rating<<rating_num>>_font_size>>
+      font_color: "#FFFFFF"
+      back_color: "#00000099"
+      back_radius: 30
+      back_width: <<back_width>>
+      back_height: <<back_height>>
+      back_align: center
+      back_padding: 15
+      git: PMM/overlays/images/raw/<<rating<<rating_num>>_image_url>><<image_extra>>
+      addon_position: <<addon_position>>
+      addon_offset: 15
+
+overlays:
+  Rating1Rotten:
+    template:
+      name: Rating
+      rating_num: "1"
+      image_level: Rotten
+
+  Rating1Fresh:
+    template:
+      name: Rating
+      rating_num: "1"
+      image_level: Fresh
+
+  Rating1Top:
+    template:
+      name: Rating
+      weight: 110
+      rating_num: "1"
+      image_level: Top
+
+  Rating2Rotten:
+    template:
+      name: Rating
+      rating_num: "2"
+      image_level: Rotten
+
+  Rating2Fresh:
+    template:
+      name: Rating
+      rating_num: "2"
+      image_level: Fresh
+
+  Rating2Top:
+    template:
+      name: Rating
+      weight: 110
+      rating_num: "2"
+      image_level: Top
+
+  Rating3Rotten:
+    template:
+      name: Rating
+      rating_num: "3"
+      image_level: Rotten
+
+  Rating3Fresh:
+    template:
+      name: Rating
+      rating_num: "3"
+      image_level: Fresh
+
+  Rating3Top:
+    template:
+      name: Rating
+      weight: 110
+      rating_num: "3"
+      image_level: Top
