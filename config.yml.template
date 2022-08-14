@@ -1,0 +1,123 @@
+libraries:
+  Movies:
+    metadata_path:
+      folder: config/metadata/movies/
+    overlay_path:
+    - remove_overlays: false
+    - file: config/metadata/overlays/resolution
+    - file: config/metadata/overlays/special_release
+    - file: config/metadata/overlays/imax
+    - file: config/metadata/overlays/content_rating
+      template_variables:
+        rating: CSM
+        side: bottom
+    settings:
+      report_path: config/reports/movies.yml
+      asset_directory:
+      - config/assets
+      - config/assets/general
+      - config/assets/people
+      - config/assets/movies
+    operations:
+      mass_originally_available_update: tmdb
+      mass_genre_update: tmdb
+      mass_content_rating_update: mdb_commonsense
+      mass_critic_rating_update: mdb_tomatoes
+      mass_audience_rating_update: imdb
+      mass_user_rating_update: tmdb
+  4K Movies:
+    metadata_path:
+      - folder: config/metadata/movies/
+    overlay_path:
+    - reapply_overlays: false
+    - file: config/metadata/overlays/resolution
+    - file: config/metadata/overlays/special_release
+      template_variables:
+        horizontal_offset: 0
+        horizontal_align: center
+    - file: config/metadata/overlays/imax
+    - file: config/metadata/overlays/content_rating
+      template_variables:
+        rating: CSM
+        side: bottom
+    settings:
+      report_path: config/reports/4k_movies.yml
+      asset_directory:
+      - config/assets
+      - config/assets/general
+      - config/assets/people
+      - config/assets/movies
+    operations:
+      mass_originally_available_update: tmdb
+      mass_genre_update: tmdb
+      mass_content_rating_update: mdb_commonsense
+      mass_critic_rating_update: mdb_tomatoes
+      mass_audience_rating_update: imdb
+      mass_user_rating_update: tmdb
+  TV Shows:
+    metadata_path:
+      folder: config/metadata/tv/
+    settings:
+      report_path: config/reports/tv_shows.yml
+      asset_directory:
+      - config/assets
+      - config/assets/general
+      - config/assets/tv
+    operations:
+      mass_genre_update: tvdb
+      genre_mapper:
+        Anime: Animation
+        Children: Family
+      mass_critic_rating_update: mdb_tomatoes
+      mass_audience_rating_update: imdb
+      mass_user_rating_update: tmdb
+      mass_episode_critic_rating_update: imdb
+      mass_episode_audience_rating_update: imdb
+      mass_episode_user_rating_update: tmdb
+  Formula 1:
+    metadata_path:
+      folder: config/metadata/formula1/
+playlist_files:
+  file: config/metadata/playlists.yml
+  asset_directory:
+  - config/assets/playlists
+settings: # Can be individually specified per library as well
+  cache: true
+  cache_expiration: 60
+  asset_folders: true
+  asset_depth: 1
+  assets_for_all: true
+  sync_mode: append
+  show_unmanaged: true
+  show_filtered: false
+  show_missing: true
+  save_missing: true
+  run_again_delay: 2
+  missing_only_released: true
+  create_asset_folders: true
+  delete_below_minimum: false
+  tvdb_language: default
+  show_missing_assets: true
+  minimum_items: 2
+  dimensional_asset_rename: false
+  download_url_assets: false
+  show_missing_season_assets: false
+  show_missing_episode_assets: false
+  show_asset_not_needed: true
+  default_collection_order:
+  item_refresh_delay: 0
+  delete_not_scheduled: false
+  only_filter_missing: false
+  show_options: false
+  ignore_ids:
+  ignore_imdb_ids:
+  playlist_sync_to_users: all
+  verify_ssl: true
+  custom_repo:
+  asset_directory: config/assets
+  webhooks:
+    error: notifiarr
+  check_nightly: true
+  prioritize_assets: false
+  save_report: true
+  playlist_report: true
