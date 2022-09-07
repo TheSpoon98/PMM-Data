@@ -10,14 +10,6 @@ templates:
       weight: 100
       side: left
     conditionals:
-      # run_this:
-      #   default: true
-      #   conditions:
-      #     - image_level: Top
-      #       rating<<rating_num>>_image: [anidb, letterboxd, rt_popcorn, tmdb, trakt]
-      #       value: false
-      #     - rating<<rating_num>>: none
-      #       value: false
       rating_style:
         default: ""
         conditions:
@@ -48,14 +40,6 @@ templates:
         conditions:
           - side: [top, bottom]
             value: 30
-          # - side: [top, bottom]
-          #   rating2: none
-          #   value: -165
-          # - side: [top, bottom]
-          #   rating3: none
-          #   value: -165
-          # - side: [top, bottom]
-            # value: -335
       rating_horizontal_align:
         default: left
         conditions:
@@ -68,14 +52,6 @@ templates:
         conditions:
           - side: [left, right]
             value: 0
-          # - side: [left, right]
-          #   rating2: none
-          #   value: -105
-          # - side: [left, right]
-          #   rating3: none
-          #   value: -105
-          # - side: [left, right]
-            # value: -205
       rating_vertical_align:
         default: center
         conditions:

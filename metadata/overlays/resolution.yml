@@ -56,8 +56,16 @@ templates:
       - <<use_<<opt1>>>>
       - <<use_<<opt2>>>>
     suppress_overlays:
-      - IMAX-E
-      - IMAX
+      # - IMAX-E
+      # - IMAX
+      - Directors-Cut
+      - Extended-Edition
+      - Uncut-Edition
+      - Unrated-Edition
+      - Special-Edition
+      - Final-Cut
+      - Remastered
+      - Criterion
     overlay:
       name: <<overlay_name>>
       git: PMM/overlays/images/<<overlay>>

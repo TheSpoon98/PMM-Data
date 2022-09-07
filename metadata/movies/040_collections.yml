@@ -71,7 +71,7 @@ collections:
     name: "Pokémon"
     collection_order: release
 
-  Middle-Earth Collection:
+  Middle-Earth:
     template: { name: collection }
     tmdb_list_details: 8191091
 

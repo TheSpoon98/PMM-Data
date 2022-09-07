@@ -38,9 +38,9 @@ templates:
       group: SpecialReleaseGroup
     collection_level: <<overlay_level>>
     allowed_library_types: <<use_<<slug>>>>
-    suppress_overlays:
-      - IMAX-E
-      - IMAX
+    # suppress_overlays:
+    #   - IMAX-E
+    #   - IMAX
     overlay:
       name: <<overlay>><<extra>>
       group: <<group>>
@@ -57,9 +57,24 @@ overlays:
         weight: 90
         slug: directorscut
         overlay: Directors-Cut
+    suppress_overlays:
+      - Directors-Cut-Dovetail
     plex_all: true
     filters:
-      filepath.regex: '(?<=[0-9]{4}[)}>\]]\s)(?i)\bDirector|Directors\b'
+      filepath.regex: 'edition-(?i)\bDirector|Directors\b'
+
+  Directors-Cut-Dovetail:
+    template:
+      - name: Edition
+        weight: 90
+        slug: directorscut
+        extra: ''
+        vertical_offset: 99
+        group: Dovetail
+        overlay: Directors-Cut
+    plex_all: true
+    filters:
+      filepath.regex: 'edition-(?i)\bDirector|Directors\b'
 
   Extended-Edition:
     template:
@@ -67,9 +82,24 @@ overlays:
         weight: 80
         slug: extended
         overlay: Extended-Edition
+    suppress_overlays:
+      - Extended-Edition-Dovetail
     plex_all: true
     filters:
-      filepath.regex: '(?<=[0-9]{4}[)}>\]]\s)(?i)\bExtended\b'
+      filepath.regex: 'edition-(?i)\bExtended\b'
+
+  Extended-Edition-Dovetail:
+    template:
+      - name: Edition
+        weight: 80
+        slug: extended
+        extra: ''
+        vertical_offset: 99
+        group: Dovetail
+        overlay: Extended-Edition
+    plex_all: true
+    filters:
+      filepath.regex: 'edition-(?i)\bExtended\b'
 
   Uncut-Edition:
     template:
@@ -77,9 +107,24 @@ overlays:
         weight: 70
         slug: uncut
         overlay: Uncut-Edition
+    suppress_overlays:
+      - Uncut-Edition-Dovetail
     plex_all: true
     filters:
-      filepath.regex: '(?<=[0-9]{4}[)}>\]]\s)(?i)\bUncut\b'
+      filepath.regex: 'edition-(?i)\bUncut\b'
+
+  Uncut-Edition-Dovetail:
+    template:
+      - name: Edition
+        weight: 70
+        slug: uncut
+        extra: ''
+        vertical_offset: 99
+        group: Dovetail
+        overlay: Uncut-Edition
+    plex_all: true
+    filters:
+      filepath.regex: 'edition-(?i)\bUncut\b'
 
   Unrated-Edition:
     template:
@@ -87,9 +132,24 @@ overlays:
         weight: 60
         slug: unrated
         overlay: Unrated-Edition
+    suppress_overlays:
+      - Unrated-Edition-Dovetail
     plex_all: true
     filters:
-      filepath.regex: '(?<=[0-9]{4}[)}>\]]\s)(?i)\bUnrated\b'
+      filepath.regex: 'edition-(?i)\bUnrated\b'
+
+  Unrated-Edition-Dovetail:
+    template:
+      - name: Edition
+        weight: 60
+        slug: unrated
+        extra: ''
+        vertical_offset: 99
+        group: Dovetail
+        overlay: Unrated-Edition
+    plex_all: true
+    filters:
+      filepath.regex: 'edition-(?i)\bUnrated\b'
 
   Special-Edition:
     template:
@@ -97,9 +157,24 @@ overlays:
         weight: 50
         slug: special
         overlay: Special-Edition
+    suppress_overlays:
+      - Special-Edition-Dovetail
     plex_all: true
     filters:
-      filepath.regex: '(?<=[0-9]{4}[)}>\]]\s)(?i)\bSpecial\b'
+      filepath.regex: 'edition-(?i)\bSpecial\b'
+
+  Special-Edition-Dovetail:
+    template:
+      - name: Edition
+        weight: 50
+        slug: special
+        extra: ''
+        vertical_offset: 99
+        group: Dovetail
+        overlay: Special-Edition
+    plex_all: true
+    filters:
+      filepath.regex: 'edition-(?i)\bSpecial\b'
 
   Final-Cut:
     template:
@@ -107,9 +182,24 @@ overlays:
         weight: 40
         slug: finalcut
         overlay: Final-Cut
+    suppress_overlays:
+      - Final-Cut-Dovetail
     plex_all: true
     filters:
-      filepath.regex: '(?<=[0-9]{4}[)}>\]]\s)(?i)\bFinal Cut\b'
+      filepath.regex: 'edition-(?i)\bFinal Cut\b'
+
+  Final-Cut-Dovetail:
+    template:
+      - name: Edition
+        weight: 40
+        slug: finalcut
+        extra: ''
+        vertical_offset: 99
+        group: Dovetail
+        overlay: Final-Cut
+    plex_all: true
+    filters:
+      filepath.regex: 'edition-(?i)\bFinal Cut\b'
 
   Remastered:
     template:
@@ -117,9 +207,24 @@ overlays:
         weight: 30
         slug: remastered
         overlay: Remastered
+    suppress_overlays:
+      - Remastered-Dovetail
     plex_all: true
     filters:
-      filepath.regex: '(?<=[0-9]{4}[)}>\]]\s)(?i)\bRemaster\b'
+      filepath.regex: 'edition-(?i)\bRemastered\b'
+
+  Remastered-Dovetail:
+    template:
+      - name: Edition
+        weight: 30
+        slug: remastered
+        extra: ''
+        vertical_offset: 99
+        group: Dovetail
+        overlay: Remastered
+    plex_all: true
+    filters:
+      filepath.regex: 'edition-(?i)\bRemastered\b'
 
   Criterion:
     template:

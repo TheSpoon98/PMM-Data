@@ -45,15 +45,20 @@ collections:
   #     template: {name: Birthday, birthday: "Daniel Kaluuya"}
   #     letterboxd_list: https://letterboxd.com/actor/daniel-kaluuya/
 
+    Bruce Willis:
+      schedule: range(03/27-04/03)
+      template: {name: Birthday, birthday: "Bruce Willis"}
+      letterboxd_list: https://letterboxd.com/actor/bruce-willis/
+
   #   Quentin Tarantino:
   #     schedule: range(03/27-04/03)
   #     template: {name: Birthday, birthday: "Quentin Tarantino"}
   #     letterboxd_list: https://letterboxd.com/director/quentin-tarantino/
 
-  Robert Downey Jr:
-    schedule: range(04/04-04/10)
-    template: { name: Birthday, birthday: "Robert Downey Jr" }
-    letterboxd_list: https://letterboxd.com/actor/robert-downey-jr/
+    Robert Downey Jr:
+      schedule: range(04/04-04/10)
+      template: { name: Birthday, birthday: "Robert Downey Jr" }
+      letterboxd_list: https://letterboxd.com/actor/robert-downey-jr/
 
   #   Renée Zellweger:
   #     schedule: range(04/25-04/31)
@@ -75,55 +80,55 @@ collections:
   #     template: {name: Birthday, birthday: "Jane Campion"}
   #     letterboxd_list: https://letterboxd.com/director/jane-campion/
 
-  George Clooney:
-    schedule: range(05/06-05/12)
-    template: { name: Birthday, birthday: "George Clooney" }
-    letterboxd_list: https://letterboxd.com/actor/george-clooney/
+    George Clooney:
+      schedule: range(05/06-05/12)
+      template: { name: Birthday, birthday: "George Clooney" }
+      letterboxd_list: https://letterboxd.com/actor/george-clooney/
 
-  Cate Blanchett:
-    schedule: range(05/14-05/20)
-    template: { name: Birthday, birthday: "Cate Blanchett" }
-    letterboxd_list: https://letterboxd.com/actor/cate-blanchett/
+    Cate Blanchett:
+      schedule: range(05/14-05/20)
+      template: { name: Birthday, birthday: "Cate Blanchett" }
+      letterboxd_list: https://letterboxd.com/actor/cate-blanchett/
 
     #   Clint Eastwood:
     #     schedule: range(05/14-05/20)
     #     template: {name: Birthday, birthday: "Clint Eastwood"}
     #     letterboxd_list: https://letterboxd.com/actor/clint-eastwood/
 
-  Angelina Jolie:
-    schedule: range(06/04-06/10)
-    template: { name: Birthday, birthday: "Angelina Jolie" }
-    letterboxd_list: https://letterboxd.com/actor/angelina-jolie/
+    Angelina Jolie:
+      schedule: range(06/04-06/10)
+      template: { name: Birthday, birthday: "Angelina Jolie" }
+      letterboxd_list: https://letterboxd.com/actor/angelina-jolie/
 
-  Natalie Portman:
-    schedule: range(06/09-06/15)
-    template: { name: Birthday, birthday: "Natalie Portman" }
-    letterboxd_list: https://letterboxd.com/actor/natalie-portman/
+    Natalie Portman:
+      schedule: range(06/09-06/15)
+      template: { name: Birthday, birthday: "Natalie Portman" }
+      letterboxd_list: https://letterboxd.com/actor/natalie-portman/
 
-  Chris Pratt:
-    schedule: range(06/21-06/27)
-    template: { name: Birthday, birthday: "Chris Pratt" }
-    letterboxd_list: https://letterboxd.com/actor/chris-pratt/
+    Chris Pratt:
+      schedule: range(06/21-06/27)
+      template: { name: Birthday, birthday: "Chris Pratt" }
+      letterboxd_list: https://letterboxd.com/actor/chris-pratt/
 
-  Tom Cruise:
-    schedule: range(07/03-07/09)
-    template: { name: Birthday, birthday: "Tom Cruise" }
-    letterboxd_list: https://letterboxd.com/actor/tom-cruise/
+    Tom Cruise:
+      schedule: range(07/03-07/09)
+      template: { name: Birthday, birthday: "Tom Cruise" }
+      letterboxd_list: https://letterboxd.com/actor/tom-cruise/
 
-  Tom Hanks:
-    schedule: range(07/09-07/15)
-    template: { name: Birthday, birthday: "Tom Hanks" }
-    letterboxd_list: https://letterboxd.com/actor/tom-hanks/
+    Tom Hanks:
+      schedule: range(07/09-07/15)
+      template: { name: Birthday, birthday: "Tom Hanks" }
+      letterboxd_list: https://letterboxd.com/actor/tom-hanks/
 
-  Harrison Ford:
-    schedule: range(07/13-07/19)
-    template: { name: Birthday, birthday: "Harrison Ford" }
-    letterboxd_list: https://letterboxd.com/actor/harrison-ford/
+    Harrison Ford:
+      schedule: range(07/13-07/19)
+      template: { name: Birthday, birthday: "Harrison Ford" }
+      letterboxd_list: https://letterboxd.com/actor/harrison-ford/
 
-  Vin Diesel:
-    schedule: range(07/18-07/24)
-    template: { name: Birthday, birthday: "Vin Diesel" }
-    letterboxd_list: https://letterboxd.com/actor/vin-diesel/
+    Vin Diesel:
+      schedule: range(07/18-07/24)
+      template: { name: Birthday, birthday: "Vin Diesel" }
+      letterboxd_list: https://letterboxd.com/actor/vin-diesel/
 
   #   Charlize Theron:
   #     schedule: range(08/07-08/13)
@@ -135,10 +140,10 @@ collections:
   #     template: {name: Birthday, birthday: "Jennifer Lawrence"}
   #     letterboxd_list: https://letterboxd.com/actor/jennifer-lawrence/
 
-  #  Ben Affleck:
-  #     schedule: range(08/17-08/23)
-  #     template: {name: Birthday, birthday: "Ben Affleck"}
-  #     letterboxd_list: https://letterboxd.com/actor/ben-affleck/
+    Ben Affleck:
+        schedule: range(08/15-08/21)
+        template: {name: Birthday, birthday: "Ben Affleck"}
+        letterboxd_list: https://letterboxd.com/actor/ben-affleck/
 
   #   Robert De Niro:
   #     schedule: range(08/15-08/20)
@@ -155,10 +160,10 @@ collections:
   #     template: {name: Birthday, birthday: "Guillermo del Toro"}
   #     letterboxd_list: https://letterboxd.com/director/guillermo-del-toro/
 
-  Matt Damon:
-    schedule: range(10/08-10/14)
-    template: { name: Birthday, birthday: "Matt Damon" }
-    letterboxd_list: https://letterboxd.com/actor/matt-damon/
+    Matt Damon:
+      schedule: range(10/08-10/14)
+      template: { name: Birthday, birthday: "Matt Damon" }
+      letterboxd_list: https://letterboxd.com/actor/matt-damon/
 
   #   Emma Stone:
   #     schedule: range(11/06-11/12)
@@ -180,25 +185,30 @@ collections:
   #     template: {name: Birthday, birthday: "Anne Hathaway"}
   #     letterboxd_list: https://letterboxd.com/actor/anne-hathaway/
 
-  Scarlett Johansson:
-    schedule: range(11/22-11/28)
-    template: { name: Birthday, birthday: "Scarlett Johansson" }
-    letterboxd_list: https://letterboxd.com/actor/scarlett-johansson/
+    Scarlett Johansson:
+      schedule: range(11/22-11/28)
+      template: { name: Birthday, birthday: "Scarlett Johansson" }
+      letterboxd_list: https://letterboxd.com/actor/scarlett-johansson/
 
-  Brad Pitt:
-    schedule: range(12/18-12/24)
-    template: { name: Birthday, birthday: "Brad Pitt" }
-    letterboxd_list: https://letterboxd.com/actor/brad-pitt/
+    Ridley Scott:
+      schedule: range(11/30-12/06)
+      template: { name: Birthday, birthday: "Ridley Scott" }
+      letterboxd_list: https://letterboxd.com/director/ridley-scott
+
+    Brad Pitt:
+      schedule: range(12/18-12/24)
+      template: { name: Birthday, birthday: "Brad Pitt" }
+      letterboxd_list: https://letterboxd.com/actor/brad-pitt/
 
   #   Steven Spielberg:
   #     schedule: range(12/18-12/24)
   #     template: {name: Birthday, birthday: "Steven Spielberg"}
   #     letterboxd_list: https://letterboxd.com/director/steven-spielberg/
 
-  Samuel L Jackson:
-    schedule: range(12/21-12/27)
-    template: { name: Birthday, birthday: "Samuel L Jackson" }
-    letterboxd_list: https://letterboxd.com/actor/samuel-l-jackson/
+    Samuel L Jackson:
+      schedule: range(12/21-12/27)
+      template: { name: Birthday, birthday: "Samuel L Jackson" }
+      letterboxd_list: https://letterboxd.com/actor/samuel-l-jackson/
 
   #   Denzel Washington:
   #     schedule: range(12/28-01/03)
