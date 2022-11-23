@@ -51,7 +51,6 @@
 #      mass_episode_user_rating_update: tmdb                #
 #                                                           #
 #############################################################
-
 templates:
   Rating:
     optional:
@@ -318,7 +317,6 @@ templates:
       back_height: <<back_height>>
       back_align: center
       back_padding: 15
-      git: PMM/overlays/images/raw/<<rating<<rating_num>>_image_url>><<image_extra>>
       addon_position: <<addon_position>>
       addon_offset: 15
 

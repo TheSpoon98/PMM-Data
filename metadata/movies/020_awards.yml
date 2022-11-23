@@ -4,46 +4,18 @@
 collections:
   Oscars Best Picture Winners:
     imdb_list: https://www.imdb.com/search/title/?groups=best_picture_winner&sort=release_date,asc
-    sort_title: "021_AwardWinners"
+    sort_title: "!021_AwardWinners"
+    collection_order: release.desc
     summary: "A collection of winners of the Best Picture category in the Academy Awards."
 
   Golden Globes Best Picture Winners:
     tmdb_list: 8191011, 8191022
-    sort_title: "022_AwardWinners"
+    sort_title: "!022_AwardWinners"
     collection_order: release.desc
     sync_mode: sync
     summary: "The Golden Globe Award for Best Motion Picture as awarded by the Hollywood Foreign Press Association.  Contains both categories of Drama and Muical or Comedy."
 
-  # Golden Globes Best Picture Winners - Drama:
-  #   tmdb_list: https://www.themoviedb.org/list/8191011?sort_by=primary_release_date.asc
-  #   sort_title: "022_AwardWinners"
-  #   summary: "The Golden Globe Award for Best Motion Picture – Drama as awarded by the Hollywood Foreign Press Association."
-
-  # Golden Globes Best Picture Winners - Musical or Comedy:
-  #   tmdb_list: https://www.themoviedb.org/list/8191022?sort_by=primary_release_date.asc
-  #   sort_title: "023_AwardWinners"
-  #   summary: "The Golden Globe Award for Best Motion Picture – Musical or Comedy as awarded by the Hollywood Foreign Press Association."
-
-  # 2022 Oscar Nominees:
-  #   trakt_list: https://trakt.tv/users/processphantom/lists/2022-oscar-nominees?sort=title,asc
+  # 2023 Oscar Nominees:
+  #   trakt_list: https://trakt.tv/users/processphantom/lists/2023-oscar-nominees?sort=title,asc
   #   sort_title: "02_0AwardWinners"
-  #   summary: "A collection of Nominees for the 2022 Academy Awards."
-
-  # Award Season Winners:
-  #   imdb_list:
-  #     - https://www.imdb.com/search/title/?title_type=feature&groups=emmy_winner&sort=year,desc
-  #     - https://www.imdb.com/search/title/?title_type=feature&groups=oscar_winner&sort=year,desc
-  #     - https://www.imdb.com/search/title/?title_type=feature&groups=golden_globe_winner&sort=year,desc
-  #   sort_title: "07_1AwardWinners"
-  #   summary: "A collection of winning movies from the Emmys, Oscars and Golden Globe award ceremonies over the year"
-  #   url_poster: https://i.ibb.co/X4jjdS4/Awards-Season.jpg
-  #   smart_label: year.desc
-  #   schedule: range (11/01-02/28)
-
-  # Razzie Award Winners:
-  #   imdb_list: https://www.imdb.com/search/title/?title_type=feature,short&groups=razzie_winner&sort=year,desc
-  #   sort_title: "07_2RazzieAwards"
-  #   summary: "The Golden Raspberry Awards (also known as the Razzies and Razzie Awards) is a parody award show honoring the worst of cinematic under-achievements"
-  #   url_poster: https://i.ibb.co/jW143gX/Razzie-Awards.jpg
-  #   smart_label: year.desc
-  #   schedule: range (11/01-02/28)
+  #   summary: "A collection of Nominees for the 2023 Academy Awards."

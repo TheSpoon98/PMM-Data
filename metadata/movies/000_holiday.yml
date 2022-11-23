@@ -8,7 +8,7 @@ templates:
       A timed collection of <<collection_name>> and other movies that may relate to the holiday.
 
       NOTE: this collection will only be around until <<end_date>>.
-    sort_title: "000_<<collection_name>>"
+    sort_title: "!000_<<collection_name>>"
     schedule: range(<<start_date>>-<<end_date>>)
     delete_not_scheduled: true
     visible_home: true
@@ -25,30 +25,39 @@ collections:
       - https://www.imdb.com/list/ls057783436/
       - https://www.imdb.com/list/ls064427905/
 
-  Thanksgiving Movies:
-    template:
-      name: Holiday
-      start_date: 11/01
-      end_date: 11/30
-    imdb_list:
-      - https://www.imdb.com/list/ls000835734/
-      - https://www.imdb.com/list/ls091597850/
+  # Labor Day Movies:
+  #   template:
+  #     name: Holiday
+  #     start_date: 08/29
+  #     end_date: 09/10
+  #     url_poster: https://raw.githubusercontent.com/WhoDat104/Holidays/main/Labor%20Day.jpg
+  #   imdb_list:
+  #     - https://www.imdb.com/list/ls002014923/
 
-  Halloween Movies:
-    template:
-      name: Holiday
-      start_date: 10/01
-      end_date: 10/31
-    imdb_list:
-      - https://www.imdb.com/list/ls023118929/
-      - https://www.imdb.com/list/ls000099714/
-    tmdb_collection:
-      - 91361 # Halloween Collection
-      - 8581 # A Nightmare on Elm Street Collection
-      - 1733 # The Mummy Collection
-      - 8091 # Alien Collection
-    tmdb_movie:
-      - 23437 # A Nightmare on Elm Street (2010)
+  # Thanksgiving Movies:
+  #   template:
+  #     name: Holiday
+  #     start_date: 11/01
+  #     end_date: 11/30
+  #   imdb_list:
+  #     - https://www.imdb.com/list/ls000835734/
+  #     - https://www.imdb.com/list/ls091597850/
+
+  # Halloween Movies:
+  #   template:
+  #     name: Holiday
+  #     start_date: 10/01
+  #     end_date: 10/31
+  #   imdb_list:
+  #     - https://www.imdb.com/list/ls023118929/
+  #     - https://www.imdb.com/list/ls000099714/
+  #   tmdb_collection:
+  #     - 91361 # Halloween Collection
+  #     - 8581 # A Nightmare on Elm Street Collection
+  #     - 1733 # The Mummy Collection
+  #     - 8091 # Alien Collection
+  #   tmdb_movie:
+  #     - 23437 # A Nightmare on Elm Street (2010)
 
   Christmas Movies:
     template:

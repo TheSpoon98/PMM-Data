@@ -5,7 +5,7 @@ templates:
   Decade:
     summary: Top Rated movies of the <<key>>s.
     minimum_items: 10
-    sort_title: "03_<<collection_name>>"
+    sort_title: "!03_<<collection_name>>"
     url_background: https://wallpapercave.com/wp/wp4016022.jpg
     collection_order: audience_rating.desc
     plex_search:

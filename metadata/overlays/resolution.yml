@@ -56,8 +56,6 @@ templates:
       - <<use_<<opt1>>>>
       - <<use_<<opt2>>>>
     suppress_overlays:
-      # - IMAX-E
-      # - IMAX
       - Directors-Cut
       - Extended-Edition
       - Uncut-Edition
@@ -68,7 +66,6 @@ templates:
       - Criterion
     overlay:
       name: <<overlay_name>>
-      git: PMM/overlays/images/<<overlay>>
       group: res
       weight: <<weight>>
       horizontal_offset: <<horizontal_offset>>

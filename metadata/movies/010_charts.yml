@@ -4,20 +4,10 @@
 
 collections:
 
-  Recently Released:
-    sort_title: "012_NewReleases"
-    sync_mode: sync
-    summary: A collection of newly-released movies in cinema and on streaming services
-    url_background: https://wallpapercave.com/wp/wp4016022.jpg
-    plex_search:
-      all:
-        release: 180
-      sort_by: release.desc
-
   Plex Popular Week:
     name: "Popular On Plex"
     summary: Silently judge what others are watching... then watch it yourself.
-    sort_title: "011_Popular"
+    sort_title: "!011_Popular"
     name_mapping: Plex Popular Week
     sync_mode: sync
     collection_order: alpha
@@ -29,9 +19,19 @@ collections:
     visible_home: true
     visible_shared: true
 
+  Recently Released:
+    sort_title: "!012_NewReleases"
+    sync_mode: sync
+    summary: A collection of movies released in the past 90 days in cinema and on streaming services.
+    url_background: https://wallpapercave.com/wp/wp4016022.jpg
+    plex_search:
+      all:
+        release: 90
+      sort_by: release.desc
+
   Recently Added:
     summary: What's new on the server.
-    sort_title: "012_RecentlyAdded"
+    sort_title: "!012_RecentlyAdded"
     sync_mode: sync
     url_background: https://wallpapercave.com/wp/wp4016022.jpg
     plex_search:
@@ -40,12 +40,17 @@ collections:
       sort_by: added.asc
 
   Trending:
-    sort_title: "013_Trending"
+    summary: A collection of movies trending across the internet.
+    sort_title: "!013_Trending"
     trakt_chart:
       chart: trending
       limit: 100
       languages: en
     sync_mode: sync
-    summary: A collection of movies trending across the internet
     url_background: https://wallpaperbat.com/img/23094-cinema-hd-wallpaper-top-free-cinema-hd-background.jpg
+
+  CSM Family:
+    summary: "A collection of Family Friendly Movies from Common Sense Media."
+    sort_title: "!014_Family"
+    mdblist_list: https://mdblist.com/lists/plexmetamanager/cssfamiliesmovies
 

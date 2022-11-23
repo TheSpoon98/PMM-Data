@@ -8,7 +8,7 @@ templates:
       - movie
     tmdb_collection_details: <<collection>>
     tmdb_movie: <<movie>>
-    sort_title: "040_<<collection_name>>"
+    sort_title: "!040_<<collection_name>>"
     sync_mode: sync
     collection_order: custom
 
@@ -35,7 +35,7 @@ dynamic_collections:
 collections:
   DC Extended Universe:
     template: { name: collection }
-    tmdb_list_details: 8190675
+    trakt_list: https://trakt.tv/users/donxy/lists/dc-extended-universe
     collection_order: release
 
   Marvel Cinematic Universe:
@@ -67,7 +67,7 @@ collections:
     collection_order: alpha
 
   Pokémon Collection:
-    template: { name: collection, collection: "34055, 661031, 768140" }
+    template: { name: collection, collection: "34055, 661031" }
     name: "Pokémon"
     collection_order: release
 
@@ -79,12 +79,12 @@ collections:
     template: { name: collection, collection: "151, 115570, 115575" }
     collection_order: release
     summary: "Follow the crews of the starship USS Enterprise as it completes its missions in space."
-    sort_title: "041_Star Trek"
+    sort_title: "!041_Star Trek"
 
   Star Wars:
     template: { name: collection }
     tmdb_list_details: 8191269
-    sort_title: "041_Star Wars"
+    sort_title: "!041_Star Wars"
 
   MonsterVerse:
     template: { name: collection }
@@ -95,14 +95,14 @@ collections:
     name: "Monsters, Inc."
     name_mapping: Monsters, Inc
     collection_order: release
-    sort_title: "041_Monsters, Inc"
+    sort_title: "!041_Monsters, Inc"
 
   The Incredibles Collection:
     template: { name: collection, collection: "468222", movie: "546728, 13932" }
     name: "Incredibles"
     name_mapping: Incredibles
     collection_order: release
-    sort_title: "041_Incredibles Collection"
+    sort_title: "!041_Incredibles Collection"
 
   Toy Story:
     template: { name: collection, collection: "10194", movie: "77887, 82424" }
@@ -112,7 +112,7 @@ collections:
   WALL·E:
     template: { name: collection, movie: "10681, 13413" }
     collection_order: release
-    sort_title: "041_WALL·E"
+    sort_title: "!041_WALL·E"
 
   Winnie The Pooh & Friends:
     template:
@@ -125,11 +125,7 @@ collections:
   Inside Out:
     template: { name: collection, movie: "150540, 355338" }
     collection_order: release
-    sort_title: "041_Inside Out"
-
-  Peanuts:
-    template: { name: collection, movie: "13187, 13353, 13479" }
-    collection_order: release
+    sort_title: "!041_Inside Out"
 
   "Rankin\\Bass Christmas Classics":
     template: { name: collection, movie: "13400, 13675, 13382" }
@@ -149,12 +145,12 @@ collections:
   Kingsman:
     template: { name: collection, movie: "476669, 207703, 343668" }
     collection_order: release
-    sort_title: "041_Kingsman"
+    sort_title: "!041_Kingsman"
 
   Cars Toons:
     template: { name: collection, movie: "141528, 13934, 145316" }
     collection_order: release
-    sort_title: "041_Cars Toons"
+    sort_title: "!041_Cars Toons"
 
   Despicable Me & Minions:
     template: { name: collection, collection: "86066, 544669" }
